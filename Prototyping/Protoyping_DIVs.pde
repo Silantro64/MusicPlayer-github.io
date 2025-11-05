@@ -19,7 +19,7 @@ float playY3 = imageY + imageHeight * 3/4 ;
 float progressX = appWidth * 5.59/16 ;
 float progressY = appHeight * 5.5/11.6 ;
 float progressWidth = appWidth * 4.2/16 ;
-float progressHeight = appHeight * 0.8/16 ;
+float progressHeight = appHeight * 0.5/16 ;
 float songX = appWidth * 0.7/16 ;
 float songY = appHeight * 9.5/11.6 ;
 float songWidth = appWidth * 2/16 ;
@@ -59,3 +59,4 @@ rect(button5X, buttonY, buttonWidth, buttonHeight) ;
 rect(button6X, buttonY, buttonWidth, buttonHeight) ;
 //
 rect(button7X, buttonY, buttonWidth, buttonHeight) ;
+
