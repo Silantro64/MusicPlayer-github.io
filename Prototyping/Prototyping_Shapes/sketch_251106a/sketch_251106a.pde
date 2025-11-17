@@ -17,14 +17,10 @@ float playX2 = imageX + imageWidth *  3/4 ;
 float playY2 = imageY + imageHeight * 1/2 ;
 float playX3 = imageX + imageWidth * 1/4 ;
 float playY3 = imageY + imageHeight * 3/4 ;
-float stopX = imagesX + imageWidth * 2/4 ;
-float stopY = imageY + imageHeight  * 2/4 ;
-float stopDimension = imagesX + imageWidth * 1/4 ;
+
 //
 rect(imageX, imageY, imageWidth, imageHeight);
 //
 triangle(playX1, playY1, playX2, playY2, playX3, playY3);
 //
 rect(imagesX, imageY, imageWidth, imageHeight) ;
-//
-square(stopX, stopY, stopDimension) ;
