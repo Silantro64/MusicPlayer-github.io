@@ -58,6 +58,15 @@ float muteX2 = image6X + imageWidth * 2.7/4 ;
 float muteY2 = imageY + imageHeight * 1/4 ;
 float muteX3 = image6X + imageWidth * 1/4 ;
 float muteY3 = imageY + imageHeight * 3/4 ;
+float backX1 = image7X + imageWidth * 2/4 ;
+float backY1 = imageY + imageHeight * 1/4 ;
+float backX2 = image7X + imageWidth * 1/4 ;
+float backY2 = imageY + imageHeight * 1/2 ;
+float backX3 = image7X + imageWidth * 2/4 ;
+float backY3 = imageY + imageHeight * 3/4 ;
+float backedX1 = image7X + imageWidth * 3/4 ;
+float backedX2 = image7X + imageWidth * 2/4 ;
+float backedX3 = image7X + imageWidth * 3/4 ;
 //
 rect(imageX, imageY, imageWidth, imageHeight);
 //
@@ -92,3 +101,7 @@ rect(skipX, skipY, skipWidth, skipHeight) ;
 square(muteX, muteY, muteDimension);
 //
 triangle(muteX1, muteY1, muteX2, muteY2, muteX3, muteY3); 
+//
+triangle(backX1, backY1, backX2, backY2, backX3, backY3);
+//
+triangle(backedX1, backY1, backedX2, backY2, backedX3, backY3); 
