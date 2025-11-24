@@ -3,8 +3,8 @@
 */
 //
 //Display
-//fullScreen(); //Landscape
-size(1200, 800); //Portrait
+fullScreen(); //Landscape
+//size(1200, 800); //Portrait
 int appWidth = displayWidth; //width
 int appHeight = displayHeight; //height
 //println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreen,", "\ndisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
@@ -29,7 +29,8 @@ int imageWidth1 = 1200; //Hardcoded
 int imageHeight1 = 800; //Hardcoded
 //Aspect Ratio
 float image1AspectRatio_GreaterOne = (imageWidth1 >= imageHeight1 ) ? imageWidth1/imageHeight1: imageHeight1/imageWidth1; //Ternary Operator
-//
+//Hardcoded Greater-Than-One Aspect Ratio
+println(image1AspectRatio_GreaterOne) ;
 //DIV
 rect( imageX, imageY, imageWidth, imageHeight );
 //
