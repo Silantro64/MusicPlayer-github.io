@@ -35,10 +35,24 @@ float image1AspectRatio_GreaterOne = (imageWidth1 >= imageHeight1 ) ? float(imag
 println("Aspect Ratio >1" ,image1AspectRatio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight1 ) ;
 //Algorithm Decisions (choice)
 //Aspect Ratio
-/*
+//
+//println("Testing for Decimals, formula unsing ints:", imageWidth1/imageHeight1);
+//println("After casting added, Aspect Ratio >1:", image1AspectRatio_GreaterOne);
 
+//Algorithm Decisions (choice)
+float imageWidthAdjusted = imageWidth ;
+float imageHeightAdjusted = (imageWidth1 >= imageWidth) ? imageWidthAdjusted/image1AspectRatio_GreaterOne : imageWidthAdjusted*image1AspectRatio_GreaterOne ; //Ternary Operator
+/*
+imageWidth1
+imageDivWidth
+imageHeight1
+imageDivHeight
+imageDivWidth, imageDivHeight
 if () {} else{} //End IF Aspect Ratio
+*/
 //DIV
 rect(imageX, imageY, imageWidth, imageHeight);
 //
-image(image1, imageX, imageY, imageWidth1, imageHeight1);
+image( image1, imageX, imageY, imageWidthAdjusted, imageHeightAdjusted );
+//
+//image(image1, imageX, imageY, imageWidth1, imageHeight1);
