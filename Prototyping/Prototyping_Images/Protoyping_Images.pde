@@ -42,17 +42,10 @@ println("Aspect Ratio >1" ,image1AspectRatio_GreaterOne, "Testing for Decimals, 
 //Algorithm Decisions (choice)
 float imageWidthAdjusted = imageWidth ;
 float imageHeightAdjusted = (imageWidth1 >= imageWidth) ? imageWidthAdjusted/image1AspectRatio_GreaterOne : imageWidthAdjusted*image1AspectRatio_GreaterOne ; //Ternary Operator
-/*
-imageWidth1
-imageDivWidth
-imageHeight1
-imageDivHeight
-imageDivWidth, imageDivHeight
-if () {} else{} //End IF Aspect Ratio
-*/
+//Verification: looks good
 //DIV
 rect(imageX, imageY, imageWidth, imageHeight);
 //
-image( image1, imageX, imageY, imageWidthAdjusted, imageHeightAdjusted );
+image(image1, imageX, imageY, imageWidthAdjusted, imageHeightAdjusted);
 //
 //image(image1, imageX, imageY, imageWidth1, imageHeight1);
