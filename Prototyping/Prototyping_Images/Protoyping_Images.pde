@@ -22,12 +22,8 @@ String folder = "Images/" ;
 String sky = "sky" ;
 String fileExtensionJPG = ".jpg";
 String imagePathway1 = upArrow + folder + sky + fileExtensionJPG;
-//println("Sky Pathway:", imagePathway1);
+println("Sky Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
-//println("Bike Pathway:", imagePathway1);
-//Image Loading & Aspect Ratio
-//
-//Possible ERROR: NullPointerException on the Image
 PImage image1 = loadImage( imagePathway1 );
 int imageWidth1 = 1200; //Hardcoded
 int imageHeight1 = 800; //Hardcoded
@@ -36,13 +32,12 @@ float image1AspectRatio_GreaterOne = (imageWidth1 >= imageHeight1 ) ? float(imag
 //Hardcoded Greater-Than-One Aspect Ratio
 //How to make image bigger or smaller
 //ERROR: truncating, casting
-//println("Aspect Ratio >1" ,image1AspectRatio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight1 ) ;
+println("Aspect Ratio >1" ,image1AspectRatio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight1 ) ;
 //Algorithm Decisions (choice)
 //Aspect Ratio
 //
-//println("Testing for Decimals, formula unsing ints:", imageWidth1/imageHeight1);
-//println("After casting added, Aspect Ratio >1:", image1AspectRatio_GreaterOne);
-
+println("Testing for Decimals, formula unsing ints:", imageWidth1/imageHeight1);
+println("After casting added, Aspect Ratio >1:", image1AspectRatio_GreaterOne);
 //Algorithm Decisions (choice)
 float imageWidthAdjusted = imageWidth ;
 float imageHeightAdjusted = (imageWidth1 >= imageWidth) ? imageWidthAdjusted/image1AspectRatio_GreaterOne : imageWidthAdjusted*image1AspectRatio_GreaterOne ; //Ternary Operator
