@@ -15,8 +15,8 @@ float stringImageY = appHeight * 1.1/10 ;
 float stringImageWidth = appWidth * 1/2 ;
 float stringImageHeight = appHeight * 3/5 ; // Make smaller to test landscape
 //
-//Strings, Text
-String title
+//Strings, Text, Literal
+
 rect(stringImageX, stringImageY, stringImageWidth, stringImageHeight);
 //
-text(title, stringImageX, stringImageY);
+//text(title, stringImageX, stringImageY);
