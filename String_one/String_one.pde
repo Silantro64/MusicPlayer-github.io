@@ -10,10 +10,19 @@ int appHeight = displayHeight; //height
 //println("\n\t\t\t\t\t\t\tFullScreen,", "\ndisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
 //
 //Population
-float stringImageX = appWidth *  1/4 ;
-float stringImageY = appHeight * 1/10 ;
-float stringImageWidth = appWidth * 1/2 ;
-float stringImageHeight = appHeight * 1/10 ; // Make smaller to test landscape
+float[] stringImageWidth1 = new float[3];
+float stringImageX1= appWidth *  1/4 ;
+float stringImageY1 = appHeight * 1/10 ;
+stringImageWidth[1] = appWidth * 1/2 ;
+float stringImageHeight1 = appHeight * 1/10 ; // Make smaller to test landscape
+float stringImage2X = stringImageX1 ; //Cascading VARs
+float stringImage2Y = appHeight * 3/10 ;
+stringImageWidth[2] = appWidth * 1/4 ;
+float stringImage2Height = stringImageHeight1; //Cascading VARs
+float stringImage3X = stringImageX1 ;
+float stringImage3Y = appHeight * 5/10 ;
+stringImageWidth[3] = appWidth * 5/8 ;
+float stringImage3Height = stringImageHeight1 ; //Cascading VARs
 //
 //Strings, Text, Literal
 String title = "Eleven, Twelve, Thirteen, Fourteen";
@@ -50,22 +59,31 @@ color resetink = whiteink ;
 //ERROR Check fontSize, decreasing the text when wrapped or not shown
 textFont(titleFont, fontSize); //see variable note
 float constantDecrease = 0.99; //99% of original or 1% decrease
-while (textWidth(title) > stringImageWidth) {
+textAlign (CENTER, CENTER); //Align X&Y, see Processing.org/reference
+//Values: [LEFT | CENTER | RIGHT ] & [TOP | CENTER | BOTTOM | BASELINE ]
+//
+//FOR Loop Error, Copy * Paste 3 times
+for (i=0; i<3; i++) {
+  while (textWidth(title) > stringImageWidth[i]) {
   //ERROR: infinite loop, requires exit() & println()
   fontSize *= constantDecrease; //Assignment operator //fontSize = fontSize*0.99
   textFont(titleFont, fontSize); //see variable note
 } //End WHILE Error Check Text-wrap
-textAlign (CENTER, CENTER); //Align X&Y, see Processing.org/reference
-//Values: [LEFT | CENTER | RIGHT ] & [TOP | CENTER | BOTTOM | BASELINE ]
+}//End FOR Loop, Font Size Check in DIVs
 //
 //Aspect Ratio Calculation
-float timesNewRomanAspectRatio = fontSizeTimesNewRoman/stringImageHeight;
+float timesNewRomanAspectRatio = fontSizeTimesNewRoman/stringImageHeight1;
 println ("Times New Roman Aspect Ratio:", timesNewRomanAspectRatio);
-fontSize = stringImageHeight*timesNewRomanAspectRatio;
+fontSize = stringImageHeight1*timesNewRomanAspectRatio;
 println(); //Skip a line
 //Note: DIV to "see" variables
-rect( stringImageX, stringImageY, stringImageWidth, stringImageHeight );
+rect(stringImageX1, stringImageY1, stringImageWidth1, stringImageHeight1);
+rect(stringImage2X, stringImage2Y, stringImageWidth2, stringImageHeight2);
+rect(stringImage3X, stringImage3Y, stringImageWidth3, stringImageHeight3);
 //
 fill(greenink); //Ink, hexidecimal copied from Color Selector
-text(title, stringImageX, stringImageY, stringImageWidth, stringImageHeight );
+for(int i=o; i<3; i++)
+text(title, stringImageX[i], stringImageY[i], stringImageWidth1[i], stringImageHeight[i]);
+text(title, stringImageX[i], stringImageY[i], stringImageWidth[i], stringImageHeight[i]);
+text(title, stringImageX[i], stringImageY[i], stringImageWidth[i], stringImageHeight[i]);
 fill(resetink);
