@@ -42,7 +42,7 @@ println("Font Size:", fontSize);
  - choose Aspect Ratio that must be multiplied: fontSize/titleHeight
  - Rewriting fontSize with formulas
  */
-//Aspect Ratio Calculation
+//Hexidecimal
 color greenink = #6FCE1D ;
 color whiteink = #FFFFFF ;
 color resetink = whiteink ;
@@ -57,6 +57,8 @@ while (textWidth(title) > stringImageWidth) {
 } //End WHILE Error Check Text-wrap
 textAlign (CENTER, CENTER); //Align X&Y, see Processing.org/reference
 //Values: [LEFT | CENTER | RIGHT ] & [TOP | CENTER | BOTTOM | BASELINE ]
+//
+//Aspect Ratio Calculation
 float timesNewRomanAspectRatio = fontSizeTimesNewRoman/stringImageHeight;
 println ("Times New Roman Aspect Ratio:", timesNewRomanAspectRatio);
 fontSize = stringImageHeight*timesNewRomanAspectRatio;
