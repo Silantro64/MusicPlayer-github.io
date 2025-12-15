@@ -55,7 +55,7 @@ titleFont = createFont(timesNewRoman, fontSize);
  - Use only one DIV
  - Apply to other DIVs
  */
-//println("Font Size:", fontSize, "\tFont Spelling:", harrington, "\tFont Varaiable Confirmation:", titleFont); //Inspect PFont-type Varaible for Harddrive Address v value
+//println("Font Size:", fontSize, "\tFont Spelling:", timesNewRoman, "\tFont Varaiable Confirmation:", titleFont); //Inspect PFont-type Varaible for Harddrive Address v value
 float fontSizeTimesNewRoman = 86.0; //Change the number until it fits, largest font size
 float divHeightTimesNewRoman = stringImageHeight[0];
 //println("Font Size:", fontSize );
@@ -98,7 +98,7 @@ for ( int i=0; i<3; i++ ) {
     fontSize *= constantDecrease; //Assignment Operator  //fontSize = fontSize*0.99;
     textFont(titleFont, fontSize); //see variable note
   } //End WHILE Error Check Text-wrap
-  //println("Iterations of WHILE:", iWhile, "\tDifference of divWidth & textWidth:", stringDivWidth[i]-textWidth( title ), "\tUsing", constantDecrease*100+"%" ); //Plus sign is concatenation for % symbol, exemplar
+  println("Iterations of WHILE:", iWhile, "\tDifference of imageWidth & textWidth:", stringImageWidth[i]-textWidth( title ), "\tUsing", constantDecrease*100+"%" ); //Plus sign is concatenation for % symbol, exemplar
 } //End FOR Loop, Font Size Check in DIVs
 //WHILE Error Check
 //textFont() has option to combine font declaration with textSize()
