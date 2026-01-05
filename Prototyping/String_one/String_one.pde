@@ -9,7 +9,7 @@ int appHeight = displayHeight; //height
 //println("\t\t\t\tFullScreen, displayWidth:\t"+displayWidth, "\tdisplayHeight:\t"+displayHeight, "\n\t\t\t\tSize\t, width:\t\t"+width, "\theight:\t\t"+height);
 //
 //Population
-int numberOfDIVs = 3; //Note difference between human and comptuer counting
+int numberOfDIVs = 3; //Note difference between human and computer counting
 float[] stringImageX = new float[numberOfDIVs];
 float[] stringImageY = new float[numberOfDIVs];
 float[] stringImageWidth = new float[numberOfDIVs];
@@ -31,7 +31,7 @@ stringImageHeight[2] = stringImageHeight[0]; //Cascading VARs
 String title = "Eleven, Twelve, Thirteen, Fourteen"; //2D
 /* Full String longer than Rectangle, "Eleven"
  - When a String just fits the height aspect ratio is the largest, sometimes >1
- - Fonts differs in WHITE SPACE around the foreground "coloured ink"
+ - Fonts differs in WHITE SPACE around the foreground "colored ink"
  */
 // Students enter all text from Case Study
 //
@@ -55,12 +55,12 @@ titleFont = createFont(timesNewRoman, fontSize);
  - Use only one DIV
  - Apply to other DIVs
  */
-//println("Font Size:", fontSize, "\tFont Spelling:", timesNewRoman, "\tFont Varaiable Confirmation:", titleFont); //Inspect PFont-type Varaible for Harddrive Address v value
+//println("Font Size:", fontSize, "\tFont Spelling:", timesNewRoman, "\tFont variable Confirmation:", titleFont); //Inspect PFont-type Varaible for Harddrive Address v value
 float fontSizeTimesNewRoman = 86.0; //Change the number until it fits, largest font size
 float divHeightTimesNewRoman = stringImageHeight[0];
 //println("Font Size:", fontSize );
 /* Aspect Ratio Manipulations (changes to variables)
- - choose Aspect Ratio that must be mutliplied: fontSize/titleHeight
+ - choose Aspect Ratio that must be multiplied: fontSize/titleHeight
  - Rewriting fontSize with formulae
  */
 //
@@ -82,7 +82,7 @@ fontSize = stringImageHeight[0]*timesNewRomanAspectRatio; // Font fits in first 
 color greenInk = #6FCE1D;
 color whiteInk = #FFFFFF; //Grey Scale is 255
 color resetInk = whiteInk;
-fill(greenInk); //Ink, hexidecimal copied from Color Selector
+fill(greenInk); //Ink, hexadecimal copied from Color Selector
 //Grey Scale 0-255
 textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
