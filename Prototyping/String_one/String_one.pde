@@ -45,10 +45,10 @@ String title = "Eleven, Twelve, Thirteen, Fourteen"; //2D
 //Note: pass appHeight into fontSize and resize, passing a smallest number does not make this error
 //CAUTION: strange things happen with font sizes, should have WHILE Check and Percentage Decrease Check
 float fontSize = appHeight; //Entire Program, Algorithm to have smallest font size
-PFont titleFont; //Font Varaible Name, able to have more than one Font
+PFont titleFont; //Font Variable Name, able to have more than one Font
 String timesNewRoman = "Times New Roman"; //Spelling of the Font Matters, see PFont.list() v Create Font above
 //Reminder: only letters ending with numbers, underscore means camelCase or snake_case
-//Mispelling will cuase a very odd error
+//Mispelling will cause a very odd error
 titleFont = createFont(timesNewRoman, fontSize);
 //
 /*Measuring Aspect Ratio for Specific Font
@@ -77,7 +77,7 @@ fontSize = stringImageHeight[0]*timesNewRomanAspectRatio; // Font fits in first 
 //println(); //Skip a line
 //
 //Drawing Text
-//Minimum Lines of code to format, draw text with colour, and become aware of other functions
+//Minimum Lines of code to format, draw text with color, and become aware of other functions
 //Must be before text()
 color greenInk = #6FCE1D;
 color whiteInk = #FFFFFF; //Grey Scale is 255
