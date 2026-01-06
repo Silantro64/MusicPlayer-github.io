@@ -17,3 +17,35 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
+//
+//Global Variables
+Minim minim; // Initiates entire class
+int numberOfSongs = 1; //Best practice
+int numberOfSoundEffects = 1; //Best practice
+AudioPlayer[] playlist = new AudioPlayer[numberOfSongs];
+AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
+int currentSong = numberOfSongs - numberOfSongs; //ZERO
+//
+//Display
+size(700, 500); //width //height
+//fullscreen (); //displayWidth //displayHeight
+int appWidth = width;
+int appHeight = height;
+//
+//Music Loading - STRUCTURED Review
+minim = new Minim(this);
+String upArrow = "../../../";
+String musicFolder = "Music/";
+String normalFolder = "Normal/";
+String songName1 = "Eureka" ;
+String fileExtension_mp3 = ".mp3";
+//
+String musicDirectory = upArrow + musicFolder + normalFolder; //Concatenation
+String file = musicDirectory + songName1 + fileExtension_mp3 ;
+println("Music Pathway", musicDirectory);
+println("Full Music Pathway", file);
+//
+playlist[currentSong] = minim.loadFile(file); //ERROR: Verify Spelling & Library Installed, Sketch / Import Library
+//
+printArray("the playlist didn't load properly");
+printArray(playlist);
