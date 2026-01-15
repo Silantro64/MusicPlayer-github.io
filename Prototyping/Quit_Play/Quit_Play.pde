@@ -6,9 +6,11 @@ float playX, playY, playWidth, playHeight;
 float playX1, playY1, playX2, playY2, playX3, playY3;
 Boolean playButton=false;
 //
-color resetBackground, resetInk;
+color resetBackground, resetInk, resetBackgroundNight, resetInkNight;
 color playColorBackground, playColorSymbol, playColorBackgroundActivated, playColorSymbolActivated;
 color quitBackground, quitBackgroundActivated;
+color quitButtonInk;
+Boolean nightMode = false;
 //
 void setup() {
   //Display
@@ -38,24 +40,42 @@ void setup() {
   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
   //
   //Color Population
+  nightMode = false;
   color black = 0; // Gray Scale, much smaller color, 256 bits
   color white = 255; // Gray Scale
-  //Canvas:  defalut background and ink
-  resetBackground = white;
-  resetInk = black;
-  //Button Colors
-  color red = #E53E20;
-  color blue = #4BB2FF;
-  color yellow = #FFE043;
   color grayScale = 256/2;
   color gray = #898989;
-  playColorBackground = yellow;
-  playColorSymbol = blue;
-  playColorBackgroundActivated = blue;
-  playColorSymbolActivated = yellow;
-  quitBackground = white;
-  quitBackgroundActivated = red;
-  //
+  //Canvas:  default background and ink
+  resetBackground = white;
+  resetInk = black;
+  resetBackgroundNight = 256/4;
+  resetInkNight = int(256*0.75);
+  //Button Colors
+  color red = #CB2525;
+  color blue = #4BB2FF;
+  color yellow = #FFE043;
+  color darkGray = grayScale;
+  color lightGray = gray;
+
+  if ( nightMode == true ) {
+    resetBackground = resetBackgroundNight;
+    resetInk = resetInkNight;
+    playColorBackground = darkGray;
+    playColorSymbol = lightGray;
+    playColorBackgroundActivated = lightGray;
+    playColorSymbolActivated = darkGray;
+    quitBackground = lightGray;
+    quitBackgroundActivated = red;
+    quitButtonInk = darkGray;
+  } else {
+    playColorBackground = yellow;
+    playColorSymbol = blue;
+    playColorBackgroundActivated = blue;
+    playColorSymbolActivated = yellow;
+    quitBackground = white;
+    quitBackgroundActivated = red;
+    quitButtonInk = black;
+  } //
 } //End setup
 //
 void draw() {
@@ -83,22 +103,42 @@ void draw() {
     fill(quitBackgroundActivated);
     rect(quitX, quitY, quitWidth, quitHeight);
     fill(resetBackground);
+    fill(quitButtonInk);
+    text("X", quitX+quitWidth*1/2, quitY+quitHeight*3/5);
+    fill(resetInk);
   } else {
     fill(quitBackground);
     rect(quitX, quitY, quitWidth, quitHeight);
     fill(resetBackground);
+    fill(quitButtonInk);
+    text("X", quitX+quitWidth*1/2, quitY+quitHeight*3/5);
+    fill(resetInk);
   } //End Quit Button Hover Over
 }  //End draw
 //
 void mousePressed() {
+  if (mouseX>quitX && mouseY<quitY+quitWidth && mouseX>quitX && mouseY<quitY+quitHeight) {
+    quitbutton();
+  }
   if (playButton == true) {
     println("Play My Song");
+    playButton = false; //reset boolean for draw
   } else {
     println(" ");
   }
 }//End Mouse Pressed
 //
 void keyPressed() {
-} //End Key Pressed
-//
-//End MAIN Program
+  if (key=="Q" || key=="q");
+  {
+    quitButton();
+    if (key=="D" || key=="d");
+    colorpopulation();
+  } //End Key Pressed
+  //
+  void quitButton() {
+    noLoop(); //Adjusts the exit of the program using finishing draw()
+    exit(); //With noLoop(), exit happens here
+    println("Final Line of mousePressed and finishes draw()");
+  }//End Quit Button
+  //End MAIN Program
