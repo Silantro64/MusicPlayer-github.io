@@ -41,41 +41,8 @@ void setup() {
   //
   //Color Population
   nightMode = false;
-  color black = 0; // Gray Scale, much smaller color, 256 bits
-  color white = 255; // Gray Scale
-  color grayScale = 256/2;
-  color gray = #898989;
-  //Canvas:  default background and ink
-  resetBackground = white;
-  resetInk = black;
-  resetBackgroundNight = 256/4;
-  resetInkNight = int(256*0.75);
-  //Button Colors
-  color red = #CB2525;
-  color blue = #4BB2FF;
-  color yellow = #FFE043;
-  color darkGray = grayScale;
-  color lightGray = gray;
-
-  if ( nightMode == true ) {
-    resetBackground = resetBackgroundNight;
-    resetInk = resetInkNight;
-    playColorBackground = darkGray;
-    playColorSymbol = lightGray;
-    playColorBackgroundActivated = lightGray;
-    playColorSymbolActivated = darkGray;
-    quitBackground = lightGray;
-    quitBackgroundActivated = red;
-    quitButtonInk = darkGray;
-  } else {
-    playColorBackground = yellow;
-    playColorSymbol = blue;
-    playColorBackgroundActivated = blue;
-    playColorSymbolActivated = yellow;
-    quitBackground = white;
-    quitBackgroundActivated = red;
-    quitButtonInk = black;
-  } //
+  buildingColors();
+  //
 } //End setup
 //
 void draw() {
@@ -118,7 +85,7 @@ void draw() {
 //
 void mousePressed() {
   if (mouseX>quitX && mouseY<quitY+quitWidth && mouseX>quitX && mouseY<quitY+quitHeight) {
-    quitbutton();
+    quitButton();
   }
   if (playButton == true) {
     println("Play My Song");
@@ -129,16 +96,17 @@ void mousePressed() {
 }//End Mouse Pressed
 //
 void keyPressed() {
-  if (key=="Q" || key=="q");
-  {
+  if (key == 'Q' || key == 'q') { // Removed semicolon
     quitButton();
-    if (key=="D" || key=="d");
-    colorpopulation();
-  } //End Key Pressed
-  //
-  void quitButton() {
-    noLoop(); //Adjusts the exit of the program using finishing draw()
-    exit(); //With noLoop(), exit happens here
-    println("Final Line of mousePressed and finishes draw()");
-  }//End Quit Button
+  }
+  if (key == 'D' || key == 'd') { // Removed semicolon
+    colorPopulation();
+  }
+} // End Key Pressed
+
+void quitButton() {
+  noLoop(); // Adjusts the exit of the program using finishing draw()
+  exit(); // With noLoop(), exit happens here
+  println("Final Line of mousePressed and finishes draw()");
+} // End Quit Button
   //End MAIN Program
