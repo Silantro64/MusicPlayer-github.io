@@ -6,7 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 //Global Variables
-//All Global Variables execute first ... A global Variable is a Global Variable
+//All Global Variables execute first ... A Global Variable is a Global Variable
 int appWidth, appHeight;
 float quitX, quitY, quitWidth, quitHeight;
 float playX, playY, playWidth, playHeight;
@@ -31,68 +31,23 @@ void settings() {
  */
 void setup() {
   //Display CANVAS
-  //size(); //width //height
-  fullScreen(); //displayWidth //displayHeight
+  size(1200, 800); //width //height
+  //fullScreen(); //displayWidth //displayHeight
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
   divPopulation();
   DIVs();
   musicButtonShapes();
-  //
-  color black = 0; // Gray Scale, much smaller color, 256 bits
-  color white = 255; // Gray Scale
-  color grayScale = 255/2;
-  color gray = #CECECE;
-  //Canvas:  default background and ink
-  resetBackground = white;
-  resetInk = black;
-  resetBackgroundNight = 256/4;
-  resetInkNight = int(256*0.75);
-  //Button Colors
-  color red = #CB2525;
-  color blue = #4BB2FF;
-  color yellow = #FFE043;
-  color darkGray = grayScale;
-  color lightGray = gray;
-
-  if ( nightMode == true ) {
-    resetBackground = resetBackgroundNight;
-    resetInk = resetInkNight;
-    playColorBackground = darkGray;
-    playColorSymbol = lightGray;
-    playColorBackgroundActivated = lightGray;
-    playColorSymbolActivated = darkGray;
-    quitBackground = lightGray;
-    quitBackgroundActivated = red;
-    quitButtonInk = darkGray;
-  } else {
-    playColorBackground = yellow;
-    playColorSymbol = blue;
-    playColorBackgroundActivated = blue;
-    playColorSymbolActivated = yellow;
-    quitBackground = white;
-    quitBackgroundActivated = red;
-    quitButtonInk = black;
-  }
-  //
-  //DIVs
+  nightMode = false; //initialization in setup() only
+  colorPopulation();
   //
 } //End setup
 //
 void draw() {
-  if ( mouseX>quitDivX && mouseX<quitDivX+quitDivWidth && mouseY>quitDivY &&mouseY<quitDivY+quitDivHeight ) {
-    quitButtonActive();
-  } else {
-    quitButtonRegular();
-  }//End Quit Button Hover Over
-  if ( mouseX>playDivX && mouseX<playDivX+playDivWidth && mouseY>playDivY && mouseY<playDivY+playDivHeight ) {
-    if ( playButton == false ) playButtonActive();
-  } else {
-    //Order of below creates optical illusion - switching colours
-    playButtonReady();
-    if ( playButton == true ) playButtonActive();
-  }
+  //println("my mouse is", mouseX, mouseY);
+  //println(playButton);
+  hoverOver_draw(); //See Buttons
 } //End draw
 //
 void mousePressed() {
@@ -110,6 +65,5 @@ void keyPressed() {
   }
 } //End Key Pressed
 //
-
 //
 //End MAIN Program
