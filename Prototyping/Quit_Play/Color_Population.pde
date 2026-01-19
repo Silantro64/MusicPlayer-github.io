@@ -15,7 +15,7 @@ void buildingColors () {
   color black = 0; // Gray Scale, much smaller color, 256 bits
   color white = 255; // Gray Scale
   color grayScale = 255/2;
-  color gray = #A09E9E;
+  color gray = #CECECE;
   //Canvas:  default background and ink
   resetBackground = white;
   resetInk = black;
