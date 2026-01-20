@@ -27,7 +27,7 @@ void colorPopulation() {
   color grayScale = 255/2;
   color gray = #CECECE;
   //Canvas:  default background and ink
-  resetBackground = white;
+  resetBackgroundDay = white;
   resetInk = black;
   resetBackgroundNight = 256/4;
   resetInkNight = int(256*0.75);
@@ -49,6 +49,8 @@ void colorPopulation() {
     quitBackgroundActivated = red;
     quitButtonInk = darkGray;
   } else {
+    resetBackground = resetBackgroundDay;
+    resetInk = black;
     playColorBackground = yellow;
     playColorSymbol = blue;
     playColorBackgroundActivated = blue;
