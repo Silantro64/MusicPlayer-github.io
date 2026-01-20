@@ -11,75 +11,61 @@ void quitButton() {
 }//End Quit Button
 //
 void DIVs() {
-  rect(quitX, quitY, quitWidth, quitHeight);
-  rect(playX, playY, playWidth, playHeight);
+  quitDIV();
+  playDIV();
 }//End DIVs
 //
+void quitDIV() {
+  rect(quitX, quitY, quitWidth, quitHeight);
+} //end quit button DIV
+//
+void playDIV() {
+  rect(playX, playY, playWidth, playHeight);
+}//end play button div
+//
+void playButtonSymbol () {
+   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+}//end play button symbol
+//
 void musicButtonShapes() {
-  triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+  playButtonSymbol();
 }
 void quitButtonActive() {
   fill(quitBackgroundActivated);
-  rect(quitX, quitY, quitWidth, quitHeight);
-  fill(resetBackground);
+  quitDIV();
   fill(quitButtonInk);
-
-
-
-  //Note: rect() starts top-right corner, text() starts bottom-right corner
-  text("X", quitX+quitWidth*1/2, quitY+quitHeight*3/5); //adjust fractions or decimals until working
-
-
-
+  fill(resetBackground);
+  easyTextQuitButton();
   fill(resetInk);
 } //End Quit Button Active
 //
 void quitButtonRegular() {
   fill(quitBackground);
-  rect(quitX, quitY, quitWidth, quitHeight);
+  quitDIV();
   fill(resetBackground);
   fill(quitButtonInk);
-
-
-
-  //Note: rect() starts top-right corner, text() starts bottom-right corner
-  text("X", quitX+quitWidth*1/2, quitY+quitHeight*3/5); //adjust fractions or decimals until working
-
-
-
+  easyTextQuitButton();
   fill(resetInk);
 } //End Quit Button Active
 //
 void playButtonActive() {
   fill(playColorBackgroundActivated);
-  rect(playX, playY, playWidth, playHeight);
+  playDIV();
   fill(playColorSymbolActivated);
-
-
-
-  triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-
-
-
+  playButtonSymbol();
   fill(resetBackground);
 } // End Play Button Active
 //
 void playButtonReady() {
   fill(playColorBackground);
-  rect(playX, playY, playWidth, playHeight);
+  playDIV();
   fill(playColorSymbol);
-
-
-
-  triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-
-
-
+  playButtonSymbol();
   fill(resetBackground);
 } // End Play Button Ready
 //
 void hoverOver_draw () {
-    if (mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY &&mouseY<quitY+quitHeight) {
+  if (mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY &&mouseY<quitY+quitHeight) {
     quitButtonActive();
   } else {
     quitButtonRegular();

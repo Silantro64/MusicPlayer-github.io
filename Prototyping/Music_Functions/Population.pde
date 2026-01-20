@@ -22,7 +22,7 @@ void divPopulation() {
 } //End DIV population
 //
 void colorPopulation() {
-    color black = 0; // Gray Scale, much smaller color, 256 bits
+  color black = 0; // Gray Scale, much smaller color, 256 bits
   color white = 255; // Gray Scale
   color grayScale = 255/2;
   color gray = #CECECE;
