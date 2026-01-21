@@ -3,8 +3,9 @@
  - colorPopulation(), Color Population
  - TBA
  */
+ float stringImageX, stringImageY, stringImageWidth, stringImageHeight;
 //
-void divPopulation() {
+void DIVPopulation() {
   quitX = appWidth * 5.75/10;
   quitY = appHeight * 0/10;
   quitWidth = appWidth * 0.8/16;
@@ -19,7 +20,12 @@ void divPopulation() {
   playY2 = playY + playHeight * 1/2;
   playX3 = playX1;
   playY3 = playY + playHeight * 3/4;
-} //End DIV population
+  //
+  stringImageX = appWidth*0.5/2;
+  stringImageY = appHeight*0.5/5;
+  stringImageWidth = appWidth*0.5/1;
+  stringImageHeight = appHeight*0.5/5;
+}//End DIV population
 //
 void colorPopulation() {
   color black = 0; // Gray Scale, much smaller color, 256 bits
@@ -37,7 +43,7 @@ void colorPopulation() {
   color yellow = #FFE043;
   color darkGray = grayScale;
   color lightGray = gray;
-
+  //
   if ( nightMode == true ) {
     resetBackground = resetBackgroundNight;
     resetInk = resetInkNight;

@@ -13,6 +13,7 @@ void quitButton() {
 void DIVs() {
   quitDIV();
   playDIV();
+  titleDIV();
 }//End DIVs
 //
 void quitDIV() {
@@ -22,9 +23,12 @@ void quitDIV() {
 void playDIV() {
   rect(playX, playY, playWidth, playHeight);
 }//end play button div
+void titleDiv() {
+  rect(stringImageX, stringImageY, stringImageWidth, stringImageHeight);
+}
 //
 void playButtonSymbol () {
-   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+  triangle(playX1, playY1, playX2, playY2, playX3, playY3);
 }//end play button symbol
 //
 void musicButtonShapes() {
