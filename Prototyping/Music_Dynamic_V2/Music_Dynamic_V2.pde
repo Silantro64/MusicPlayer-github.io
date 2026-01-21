@@ -22,7 +22,7 @@ void setup() {
   //
   //Music Loading - STRUCTURED Review
   minim = new Minim(this); //Manditory
-  String upArrow = "../../";
+  String upArrow = "../../../";
   String musicFolder = "Music/";
 
   String [] songName = new String[numberOfSongs];
