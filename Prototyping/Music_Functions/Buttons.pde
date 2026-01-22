@@ -11,8 +11,8 @@ void quitButton() {
 }//End Quit Button
 //
 void DIVs() {
-  quitDIV();
-  playDIV();
+  quit();
+  play();
   titleDIV();
 }//End DIVs
 //
@@ -27,7 +27,7 @@ void titleDiv() {
   rect(stringImageX, stringImageY, stringImageWidth, stringImageHeight);
 }
 //
-void playButtonSymbol () {
+void playButton() {
   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
 }//end play button symbol
 //

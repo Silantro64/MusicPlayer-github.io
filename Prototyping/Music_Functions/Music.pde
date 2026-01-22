@@ -2,13 +2,13 @@
 Minim minim; // Initiates entire class
 int numberOfSongs = 3; //Best practice
 int numberOfSoundEffects = 1; //Best practice
-AudioPlayer[] playlist = new AudioPlayer[numberOfSongs];
+AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
 AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO
 //
 void musicSetup() {
   //Display
-  size(700, 500); //width //height
+  size(1200, 800); //width //height
   //fullScreen(); //displayWidth //displayHeight
   int appWidth = width; //Best Practice
   int appHeight = height;
@@ -30,7 +30,7 @@ void musicSetup() {
   //
   for ( int i=0; i<numberOfSongs; i++ ) {
     file = musicDirectory + songName[i] + fileExtension_mp3;
-    playlist[currentSong] = minim.loadFile(file); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+    playList[currentSong] = minim.loadFile(file); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
     currentSong++;
   } //end file loading
   currentSong=0;
@@ -39,10 +39,11 @@ void musicSetup() {
   //
   for ( int i=0; i<numberOfSongs; i++ ) {
     //ERROR Check Music and Sound Effect Variables
-    //Thrown by commenting out FILE, playlist[] or soundEffects[]
-    if ( playlist[i]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
+    //Thrown by commenting out FILE, playList[] or soundEffects[]
+    if ( playList[i]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
       //See FILE or minim.loadFile
       println("The Play List or Sound Effects did not load properly");
-      printArray(playlist);
+      printArray(playList);
       printArray(soundEffects);
-    }//end subprogram music
+    }
+  }//end subprogram music

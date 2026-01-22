@@ -1,9 +1,11 @@
 /* population
- - DIVPopulation
+ - divPopulation
  - colorPopulation(), Color Population
  - TBA
  */
+ //global variables
  float stringImageX, stringImageY, stringImageWidth, stringImageHeight;
+ color resetBlackink, resetWhiteInk, greenInk;
 //
 void divPopulation() {
   quitX = appWidth * 5.75/10;
@@ -65,6 +67,11 @@ void colorPopulation() {
     quitBackgroundActivated = red;
     quitButtonInk = black;
   }
+  //
+  //ink
+  resetBlackInk = black;
+  resetWhiteInk = white;
+  greenInk = #6FCE1D;
 }//End Color Population
 //
 //End Subprogram Population
