@@ -37,7 +37,7 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
-  DIVPopulation();
+  divPopulation();
   DIVs();
   musicButtonShapes();
   nightMode = false; //initialization in setup() only

@@ -5,7 +5,7 @@
  */
  float stringImageX, stringImageY, stringImageWidth, stringImageHeight;
 //
-void DIVPopulation() {
+void divPopulation() {
   quitX = appWidth * 5.75/10;
   quitY = appHeight * 0/10;
   quitWidth = appWidth * 0.8/16;
