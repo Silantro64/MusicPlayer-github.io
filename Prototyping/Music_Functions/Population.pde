@@ -1,5 +1,5 @@
 /* population
- - divPopulation
+ - DIVPopulation
  - colorPopulation(), Color Population
  - TBA
  */
