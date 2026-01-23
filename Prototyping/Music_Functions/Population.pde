@@ -3,9 +3,6 @@
  - colorPopulation(), Color Population
  - TBA
  */
- //global variables
- float stringImageX, stringImageY, stringImageWidth, stringImageHeight;
- color resetBlackink, resetWhiteInk, greenInk;
 //
 void divPopulation() {
   quitX = appWidth * 5.75/10;

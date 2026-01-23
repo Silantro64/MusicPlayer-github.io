@@ -16,18 +16,19 @@ void DIVs() {
   titleDIV();
 }//End DIVs
 //
-void quitDIV() {
+void quit() {
   rect(quitX, quitY, quitWidth, quitHeight);
 } //end quit button DIV
 //
-void playDIV() {
+void play() {
   rect(playX, playY, playWidth, playHeight);
 }//end play button div
+//
 void titleDiv() {
   rect(stringImageX, stringImageY, stringImageWidth, stringImageHeight);
 }
 //
-void playButton() {
+void playButtonSymbol() {
   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
 }//end play button symbol
 //

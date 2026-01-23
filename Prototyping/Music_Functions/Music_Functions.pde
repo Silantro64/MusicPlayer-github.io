@@ -5,21 +5,6 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-//
-//Global Variables
-//All Global Variables execute first ... A Global Variable is a Global Variable
-int appWidth, appHeight;
-float quitX, quitY, quitWidth, quitHeight;
-float playX, playY, playWidth, playHeight;
-float playX1, playY1, playX2, playY2, playX3, playY3;
-//
-Boolean playButton=false, quitButton=false;
-//
-color resetBackground, resetInk, resetBackgroundDay, resetInkDay, resetBackgroundNight, resetInkNight;
-color quitButtonInk;
-color playColorBackground, playColorSymbol, playColorBackgroundActivated, playColorSymbolActivated;
-color quitBackground, quitBackgroundActivated;
-Boolean nightMode=false;
 /*
 void settings() {
  println(displayWidth, displayHeight);
@@ -44,6 +29,7 @@ void setup() {
   colorPopulation();
   musicSetup();
   textSetup();
+  testMetaData();
   //
 } //End setup
 //
@@ -51,6 +37,9 @@ void draw() {
   //println("my mouse is", mouseX, mouseY);
   //println(playButton);
   hoverOver_draw(); //See Buttons
+  //
+  saveSongTitle();
+  drawText();
 } //End draw
 //
 void mousePressed() {
@@ -64,6 +53,11 @@ void keyPressed() {
     quitButton();
   }
   if (key == 'D' || key == 'd') { // Removed semicolon
+    if (nightMode == false) {
+      nightMode == true;
+    } else {
+      nightMode == false;
+    }
     colorPopulation();
   }
   //night mode
@@ -105,18 +99,19 @@ void keyPressed() {
    */
   //if ( key=='P' || key=='p' ) playlist[currentSong].play(); //Simple Play, no double tap possible
   //
-  if ( key=='P' || key=='p' ) playlist[currentSong].loop(0); { //Simple Play, double tap possible
-  /* Note: double tap is automatic rewind, no pause
-   Symbol is two triangles
-   This changes what the button might become after it is pressed
-   */
-  if ( key=='O' || key=='o' ) // Pause
-    //
-    if ( playlist[currentSong].isPlaying() ) {
-      playlist[currentSong].pause();
-    } else {
-      playlist[currentSong].play();
-    }
+  if ( key=='P' || key=='p' ) playlist[currentSong].loop(0);
+  { //Simple Play, double tap possible
+    /* Note: double tap is automatic rewind, no pause
+     Symbol is two triangles
+     This changes what the button might become after it is pressed
+     */
+    if ( key=='O' || key=='o' ) // Pause
+      //
+      if ( playlist[currentSong].isPlaying() ) {
+        playlist[currentSong].pause();
+      } else {
+        playlist[currentSong].play();
+      }
   }
   //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
   //
@@ -190,7 +185,7 @@ void keyPressed() {
   //
   //End MAIN Program
 }
- //End Key Pressed
+//End Key Pressed
 //
 //
 //End MAIN Program

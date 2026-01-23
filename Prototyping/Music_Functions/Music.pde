@@ -1,11 +1,3 @@
-//Global Variables
-Minim minim; // Initiates entire class
-int numberOfSongs = 3; //Best practice
-int numberOfSoundEffects = 1; //Best practice
-AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
-AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
-int currentSong = numberOfSongs - numberOfSongs; //ZERO
-//
 void musicSetup() {
   //Display
   size(1200, 800); //width //height

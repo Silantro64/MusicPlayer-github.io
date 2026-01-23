@@ -18,27 +18,40 @@
  Publisher: meta.publisher()
  Encoded: meta.encoded()
  */
-//Global Variable
-AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
+void metaDataFileLoading() {
+  AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
+}
 //
 void testMetaData() {
   //print what is available on a particular song
   //see image / properties / details
-   println();
-  println( "File Name: " + playListMetaData[currentSong].fileName() );
-  println( "Length (in milliseconds): " + playListMetaData[currentSong].length() );
-  println( "Title: " + playListMetaData[currentSong].title() );
-  println( "Author: " + playListMetaData[currentSong].author() );
-  println( "Album: " + playListMetaData[currentSong].album() );
-  println( "Date: " + playListMetaData[currentSong].date() );
-  println( "Comment: " + playListMetaData[currentSong].comment() );
-  println( "Lyrics: " + playListMetaData[currentSong].lyrics() );
-  println( "Track: " + playListMetaData[currentSong].track() );
-  println( "Genre: " + playListMetaData[currentSong].genre() );
-  println( "Copyright: " + playListMetaData[currentSong].copyright() );
-  println( "Disc: " + playListMetaData[currentSong].disc() );
-  println( "Composer: " + playListMetaData[currentSong].composer() );
-  println( "Orchestra: " + playListMetaData[currentSong].orchestra() );
-  println( "Publisher: " + playListMetaData[currentSong].publisher() );
-  println( "Encoded: " + playListMetaData[currentSong].encoded() );
+  println();
+  println("File Name: " + playListMetaData[currentSong].fileName() );
+  println("Length (in milliseconds): " + playListMetaData[currentSong].length() );
+  println("Title: " + playListMetaData[currentSong].title() );
+  println("Author: " + playListMetaData[currentSong].author() );
+  println("Album: " + playListMetaData[currentSong].album() );
+  println("Date: " + playListMetaData[currentSong].date() );
+  println("Comment: " + playListMetaData[currentSong].comment() );
+  println("Lyrics: " + playListMetaData[currentSong].lyrics() );
+  println("Track: " + playListMetaData[currentSong].track() );
+  println("Genre: " + playListMetaData[currentSong].genre() );
+  println("Copyright: " + playListMetaData[currentSong].copyright() );
+  println("Disc: " + playListMetaData[currentSong].disc() );
+  println("Composer: " + playListMetaData[currentSong].composer() );
+  println("Orchestra: " + playListMetaData[currentSong].orchestra() );
+  println("Publisher: " + playListMetaData[currentSong].publisher() );
+  println("Encoded: " + playListMetaData[currentSong].encoded() );
 }
+//
+void saveSongTitle() {
+  //See draw()
+  //Note: See Music Loading if NULL
+  if (playList[currentSong].isPlaying() == true) {
+    //titleDIV();
+    songTitle = playListMetaData[currentSong].title(); //Used to switch titles in draw()
+    //println("Check VAR currentSongFileName", currentSongFileName);
+  } else {
+    //titleDIV();
+    songTitle = "No song playing";
+  }
